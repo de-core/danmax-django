@@ -1,0 +1,75 @@
+{% load sekizai_tags thumbnail mathfilters %}
+<section class="slider">
+  <div class="swiper-container">
+    <div class="swiper-wrapper">
+      {% autoescape off %}
+      {% if instance.images.count|mod:6 == 0 %}
+      {% for image in instance.images.all %}
+        {% if forloop.counter0|mod:6 == 0 %}
+        <div class="swiper-slide">
+          <div class="row">
+                {% if image.url %}
+                    <div class="col-sm-4"><a href="{{ image.url }}"><img src="/media/{{ image.image }}" alt="{{ image.name }}" /></a></div>
+                {% else %}
+                    <div class="col-sm-4"><img src="/media/{{ image.image }}" alt="{{ image.name }}" /></div>
+                {% endif %}
+        {% elif forloop.counter0|mod:6 == 5 %}
+              {% if image.url %}
+                  <div class="col-sm-4"><a href="{{ image.url }}"><img src="/media/{{ image.image }}" alt="{{ image.name }}" /></a></div>
+              {% else %}
+                  <div class="col-sm-4"><img src="/media/{{ image.image }}" alt="{{ image.name }}" /></div>
+              {% endif %}
+        </div>
+      </div>
+        {% else %}
+            {% if image.url %}
+                <div class="col-sm-4"><a href="{{ image.url }}"><img src="/media/{{ image.image }}" alt="{{ image.name }}" /></a></div>
+            {% else %}
+                <div class="col-sm-4"><img src="/media/{{ image.image }}" alt="{{ image.name }}" /></div>
+            {% endif %}
+        {% endif %}
+      {% endfor %}
+    </div>
+    <h3>
+      Авиа партнеры
+    </h3>
+    <div class="pagination"></div>
+  </div>
+</section>
+      {% else%}
+      {% for image in instance.images.all %}
+        {% if forloop.counter0|mod:6 == 0 %}
+        <div class="swiper-slide">
+          <div class="row">
+                {% if image.url %}
+                    <div class="col-sm-4"><a href="{{ image.url }}"><img src="/media/{{ image.image }}" alt="{{ image.name }}" /></a></div>
+                {% else %}
+                    <div class="col-sm-4"><img src="/media/{{ image.image }}" alt="{{ image.name }}" /></div>
+                {% endif %}
+        {% elif forloop.counter0|mod:6 == 5 %}
+              {% if image.url %}
+                  <div class="col-sm-4"><a href="{{ image.url }}"><img src="/media/{{ image.image }}" alt="{{ image.name }}" /></a></div>
+              {% else %}
+                  <div class="col-sm-4"><img src="/media/{{ image.image }}" alt="{{ image.name }}" /></div>
+              {% endif %}
+        </div>
+      </div>
+        {% else %}
+            {% if image.url %}
+                <div class="col-sm-4"><a href="{{ image.url }}"><img src="/media/{{ image.image }}" alt="{{ image.name }}" /></a></div>
+            {% else %}
+                <div class="col-sm-4"><img src="/media/{{ image.image }}" alt="{{ image.name }}" /></div>
+            {% endif %}
+        {% endif %}
+      {% endfor %}
+        </div>
+      </div>
+    </div>
+    <h3>
+      Авиа партнеры
+    </h3>
+    <div class="pagination"></div>
+  </div>
+</section>
+      {% endif %}
+      {% endautoescape %}

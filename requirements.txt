@@ -1,0 +1,12 @@
+django==1.6.7
+django-cms
+djangocms_admin_style
+djangocms_text_ckeditor
+#Pillow
+djangocms_style
+djangocms_link
+djangocms_picture
+djangocms_teaser
+djangocms_video
+django-reversion
+cmsplugin_contact

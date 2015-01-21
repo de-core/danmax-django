@@ -1,0 +1,12 @@
+{% load sekizai_tags thumbnail %}
+<div class="swiper-slide">
+	{% autoescape off %}
+	{% for image in instance.images.all %}
+		{% if image.url %}
+			<div class="col-sm-4"><a href="{{ image.url }}"><img src="/media/{{ image.image }}" alt="{{ image.name }}" /></a></div>
+		{% else %}
+			<div class="col-sm-4"><img src="/media/{{ image.image }}" alt="{{ image.name }}" /></div>
+		{% endif %}
+	{% endfor %}
+	{% endautoescape %}
+</div>
